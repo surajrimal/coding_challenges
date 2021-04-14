@@ -49,8 +49,9 @@ class Solution(object):
         :rtype: List[str]
         """
         output = []
+        m = max(target)
         for i in range(1,n+1):
-            if(i>max(target)):
+            if(i>m):
                 break
             if i in target:
                 output.append("Push")
