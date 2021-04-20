@@ -1,3 +1,4 @@
+# question link https://leetcode.com/problems/longest-harmonious-subsequence/
 class Solution(object):
     def findLHS(self, nums):
         """
