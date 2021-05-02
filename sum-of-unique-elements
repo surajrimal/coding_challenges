@@ -1,0 +1,17 @@
+#link https://leetcode.com/problems/sum-of-unique-elements/submissions/
+class Solution(object):
+    def sumOfUnique(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        tsum = 0
+        counts = dict()
+        for i in nums:
+            counts[i] = counts.get(i, 0) + 1
+            if(counts.get(i) == 1):
+                tsum += i
+            if(counts.get(i) == 2):
+                tsum -=i
+        return tsum
+        
