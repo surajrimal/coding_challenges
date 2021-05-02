@@ -18,7 +18,14 @@ class Solution(object):
             return 0
         if(root.val >= low and root.val<=high):
             return root.val + self.rangeSumBST(root.left, low,high) + self.rangeSumBST(root.right, low,high)
+        elif(root.val < low):
+            return self.rangeSumBST(None, low,high) + self.rangeSumBST(root.right, low,high)
+        elif(root.val> high):
+            return self.rangeSumBST(root.left, low,high) + self.rangeSumBST(None, low,high)
         else:
-            return self.rangeSumBST(root.left, low,high) + self.rangeSumBST(root.right, low,high)
+            return 0
+            
+            
+        
             
         
