@@ -1,0 +1,21 @@
+#https://leetcode.com/problems/climbing-stairs/submissions/
+class Solution(object):
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n==1:
+            return 1
+        if n == 2:
+            return 2
+        #here we can find the pattern 
+        #so it can be solved dynamically
+        table = [None]*(n+1)
+        table[1] = 1
+        table[2] = 2
+        for i in range(3,n+1):
+            table[i]=table[i-1]+table[i-2]
+        return table[n]
+        
+        
